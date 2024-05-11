@@ -25,13 +25,21 @@ for i in range(n+1):
         tmp.append(tmp_number)
     array.append(tmp)
 
-#test realize
-tracemalloc.start()
-start = time.thread_time()  
-arr = F(array[3])
-finish = time.thread_time()
+s1 = "\tN \ttime,s \tmemory, Kb \n"
+s2 = "N;time,s;memory, Kb \n"
 
-# displaying the memory
-size, count = tracemalloc.get_traced_memory()
+#test realize
+for i in range(n+1):
+    tracemalloc.start()
+    start = time.thread_time()  
+    arr = F(array[i])
+    finish = time.thread_time()
+    size, count = tracemalloc.get_traced_memory()
+    s_time = str(finish - start)
+    N = int(math.pow(10, i))
+    s1 = s1 + str(N) + "\t" + s_time + "\t" + str(count) + "\n"
+    s2 = s2 + str(N) + ";" + s_time + ";" + str(count) + "\n"
+
+
 print(f"Peak memory: {count}")
 print('Time: ' + str(finish - start))      
