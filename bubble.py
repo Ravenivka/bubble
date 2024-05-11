@@ -1,6 +1,4 @@
-import random as rd
-A = [rd.randint(-100, 100) for i in range (10)]
-print (A)
+
 def Bubble(X: list):
     flag = True
     while(flag):
@@ -12,6 +10,6 @@ def Bubble(X: list):
                 X[i] = tmp
                 flag = True
     return X
-print(Bubble(A))
+
 
     

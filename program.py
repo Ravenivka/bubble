@@ -1,5 +1,6 @@
 import random as rd
 import math
+import bubble
 
 
 #arrays array create
@@ -17,4 +18,11 @@ print("Выбор метода сортировки:\n")
 print("\t0 - сортировка пузырьком\n")
 print("\t1 - timsort\n")    
 method = int(input("\t2 - radix sort: "))
-print (method)
+
+F = None
+match method:
+    case 0:
+        F = bubble.Bubble
+
+
+print(F(array[1]))        
