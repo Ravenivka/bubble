@@ -46,4 +46,8 @@ for i in range(10):
     n = int(n + step_num)
 
 print(s1)
-#print('Time: ' + str(finish - start))      
+flag = input("Вывести результат в файл? y/n: ")
+if flag == "y":
+    file_name = module_Name + '.csv'
+    with open(file_name, 'a') as f:
+        f.write(s2)    
