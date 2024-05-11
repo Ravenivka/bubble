@@ -1,7 +1,14 @@
 import random as rd
 import math
-import bubble
+from easygui import *
+from pathlib import Path
 
+moduleName = fileopenbox('Выберите модуль', 'Selection', '*.py','*.py')
+f_path = moduleName
+moduleName = Path(f_path).stem
+module = __import__(moduleName)
+
+F = module.sort
 
 #arrays array create
 array = []
@@ -14,15 +21,8 @@ for i in range(n+1):
         tmp.append(tmp_number)
     array.append(tmp)
 
-print("Выбор метода сортировки:\n")
-print("\t0 - сортировка пузырьком\n")
-print("\t1 - timsort\n")    
-method = int(input("\t2 - radix sort: "))
+  
 
-F = None
-match method:
-    case 0:
-        F = bubble.Bubble
 
 
 print(F(array[1]))        

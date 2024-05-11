@@ -1,5 +1,5 @@
 
-def Bubble(X: list):
+def sort(X: list):
     flag = True
     while(flag):
         flag = False        
