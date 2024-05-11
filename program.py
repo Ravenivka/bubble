@@ -3,11 +3,12 @@ import math
 from easygui import *
 from pathlib import Path
 
-moduleName = fileopenbox('Выберите модуль', 'Selection', '*.py','*.py')
-f_path = moduleName
-moduleName = Path(f_path).stem
-module = __import__(moduleName)
-
+module_Name = fileopenbox('Выберите модуль', 'Selection', '*.py','*.py')
+f_path = module_Name
+module_Name = Path(f_path).stem
+module = __import__(module_Name)
+#func_name = input("Укажите имя метода: ")
+#F = getattr(module, func_name) Если хотите указать имя функции отличное от 'sort'
 F = module.sort
 
 #arrays array create
