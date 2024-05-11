@@ -1,7 +1,10 @@
+import tracemalloc
+import time
 import random as rd
 import math
 from easygui import *
 from pathlib import Path
+
 
 module_Name = fileopenbox('Выберите модуль', 'Selection', '*.py','*.py')
 f_path = module_Name
@@ -22,8 +25,13 @@ for i in range(n+1):
         tmp.append(tmp_number)
     array.append(tmp)
 
-  
+#test realize
+tracemalloc.start()
+start = time.thread_time()  
+arr = F(array[3])
+finish = time.thread_time()
 
-
-
-print(F(array[1]))        
+# displaying the memory
+size, count = tracemalloc.get_traced_memory()
+print(f"Peak memory: {count}")
+print('Time: ' + str(finish - start))      
