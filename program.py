@@ -10,6 +10,7 @@ module_Name = fileopenbox('Выберите модуль', 'Selection', '*.py','
 f_path = module_Name
 module_Name = Path(f_path).stem
 module = __import__(module_Name)
+
 #func_name = input("Укажите имя метода: ")
 #F = getattr(module, func_name) Если хотите указать имя функции отличное от 'sort'
 F = module.sort
