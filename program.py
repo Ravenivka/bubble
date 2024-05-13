@@ -51,4 +51,5 @@ flag = input("Вывести результат в файл? y/n: ")
 if flag == "y":
     file_name = module_Name + '.csv'
     with open(file_name, 'a') as f:
-        f.write(s2)    
+        f.write(s2)
+        print("Данные записаны")    
